@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body{
+    font-family: 'Poppins', Arial, sans-serif;
+    background-image: url("https://wallpapershome.com/images/pages/pic_h/186.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* ------------Header Containt---------------- */
+.header {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1px;
+    text-align: center;
+    color: #fff;
+}
+
+.header h1 {
+    font-size: 38px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/*------------ Login container ------------*/
+
+.box-area{
+    width: 930px;
+    position: relative;
+    overflow: hidden;
+    border-color: transparent;
+}
+/*------------ Right box ------------*/
+
+.right-box{
+    padding: 40px 30px 40px 40px;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder{
+    font-size: 16px;
+}
+
+.rounded-4{
+    border-radius: 20px;
+}
+.rounded-5{
+    border-radius: 30px;
+}
+
+
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px){
+
+     .box-area{
+        margin: 0 10px;
+
+     }
+     .left-box{
+        height: 100px;
+        overflow: hidden;
+     }
+     .right-box{
+        padding: 20px;
+     }
+
+}
+
+
+/* ----------Password eye symbol----------- */
+
+
+.input-group-text {
+    border: none;
+    background-color: white;
+}

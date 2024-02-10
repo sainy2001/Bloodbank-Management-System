@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/assets/css/register.css">
+    <title>Register</title>
+</head>
+<body>
+    <!-- Page Header -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <!-- Home Logo -->
+                <a href="{% url 'index' %}"><img src="/static/assets/img/login/home.jpg" alt="Home Logo" width="40" style="background-color: transparent; color:#ffffff" ></a>
+            </div>
+        </div>
+    </div>
+    <!----------------------- Main Container -------------------------->
+
+     <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+        <!----------------------- Login Container -------------------------->
+
+       <div class="row border border-secondary rounded-5 p-3 shadow box-area" style="background-color: rgba(255, 255, 255, 0.3);
+       background-size: cover; border-color: rgba(0,0,0,0.2);">
+
+        <!-- Header -->
+        <div class="col-md-12 text-center mb-3">
+            <h2 style="color: #ffffff;"><u>Register</u> <u>Page</u></h2>
+        </div>
+
+        <!-- Success/ Error Message -->
+        {% if messages %}
+            {% for message in messages %}
+                {% if 'email_error' in message.tags %}
+                    <div class="email-error-message">
+                        <div class="alert alert-danger text-center" role="alert">
+                            {{ message }}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if 'phone_error' in message.tags %}
+                <div class="email-error-message">
+                    <div class="alert alert-danger text-center" role="alert">
+                        {{ message }}
+                    </div>
+                </div>
+                {% endif %}
+                {% if 'password_error' in message.tags %}
+                <div class="email-error-message">
+                    <div class="alert alert-danger text-center" role="alert">
+                        {{ message }}
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <!--------- Form Area -------------->
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <!-- Left-box -->
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <div id="firstnameError" style="color: red;"></div>
+                        <label for="firstname" style="color:#ffffff">Firstname</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Firstname" id="Firstname" name="Firstname" required>
+                        </div>
+                    
+                        <label for="Email" style="color:#ffffff">Email</label>
+                        <div class="input-group mb-1">
+                            <input type="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email" id="Email" name="Email" required>
+                        </div>
+                        <label for="Password1" style="color:#ffffff">Password</label>
+                        <div class="input-group mb-1">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" id="Password1" name="Password1" required oninput="validatePassword()">
+                        </div>
+                        <div id="password-error" style="font-size: 85%; background-color: transparent; color: rgb(238, 55, 156);"></div>
+                    </div>
+                </div> 
+                <!------ Right Box ------>
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <div id="lastnameError" style="color: red;"></div>
+                        <label for="lastname" style="color:#ffffff">Lastname</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Lastname" id="Lastname" name="Lastname" required>
+                        </div>
+                        
+                        <label for="Phone" style="color:#ffffff">Phone</label>
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Phone" id="Phone" name="Phone" required>
+                        </div>
+                        <label for="Password2" style="color:#ffffff">Confirm Password</label>
+                        <div class="input-group mb-1">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Confirm Password" id="Password2" name="Password2" required>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Register & sign in Button -->
+                <div class="row mt-2">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-sm rounded-4 btn-primary fs-6" style="width: 200px;" type="submit">Register</button>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="row col-md-12 text-center">
+                        <small style="color:#ffffff">Already have an account? <a href="{% url 'login' %}" style="color: #ffffff;">Sign In</a></small>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+     </div>
+    <script>
+        // Function to handle input for Firstname and Lastname
+        function handleNameInput(inputId, errorId) {
+            var input = document.getElementById(inputId);
+            var error = document.getElementById(errorId);
+
+            var newValue = input.value.substr(0, 50); // Limit to 50 characters
+            newValue = newValue.replace(/[^A-Za-z]/g, ''); // Allow only characters (A-Z, a-z)
+            newValue = newValue.toUpperCase(); // Convert to uppercase
+            input.value = newValue;
+
+            // Check for errors and display error messages
+            if (newValue.length === 0) {
+                error.textContent = "Input box can't be empty.";
+            } else if (!/^[A-Z]+$/.test(newValue)) {
+                error.textContent = "Add your name.";
+            } else {
+                error.textContent = ""; // Clear error message
+            }
+        }
+
+        // Add event listeners for Firstname and Lastname inputs
+        var firstnameInput = document.getElementById('Firstname');
+        firstnameInput.addEventListener('input', function () {
+            handleNameInput('Firstname', 'firstnameError');
+        });
+
+        var lastnameInput = document.getElementById('Lastname');
+        lastnameInput.addEventListener('input', function () {
+            handleNameInput('Lastname', 'lastnameError');
+        });
+    </script>
+    <script>
+        // Wait for the document to load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Select all elements with the class "alert" and schedule their removal
+            var alertElements = document.querySelectorAll(".alert");
+            alertElements.forEach(function(alertElement) {
+                setTimeout(function() {
+                    alertElement.style.display = 'none';
+                }, 2500); // Hide the element after 2.5 seconds (2500 milliseconds)
+            });
+        });
+    </script>
+    <script>
+        function validatePassword() {
+            var passwordInput = document.getElementById("Password1");
+            var password = passwordInput.value;
+            var passwordError = document.getElementById("password-error");
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    
+            var requirementsList = [
+                "At least one uppercase letter",
+                "At least one lowercase letter",
+                "At least one digit",
+                "Minimum length of 8 characters"
+            ];
+    
+            var errorMessage = "Password must meet the following requirements:<ul>";
+            requirementsList.forEach(function (requirement) {
+                errorMessage += "<li>" + requirement + "</li>";
+            });
+            errorMessage += "</ul>";
+    
+            if (passwordPattern.test(password)) {
+                passwordInput.setCustomValidity(""); // Clear any validation message.
+                passwordError.innerHTML = ""; // Clear any error message.
+            } else {
+                passwordInput.setCustomValidity(errorMessage);
+                passwordError.innerHTML = errorMessage;
+            }
+        }
+    </script>
+</body>
+</html>

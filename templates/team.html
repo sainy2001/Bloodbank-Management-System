@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Team Details</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/assets/css/style.css" rel="stylesheet">
+
+ 
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="{% url 'home' %}">VitalVessels</a></h1>
+      
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+
+          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'about' %}" class="active">About</a></li>
+              <li><a href="{% url 'team' %}">Team</a></li>
+              <li><a href="{% url 'testimonials' %}">Testimonials</a></li>   
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Doctor Appointment</a></li>
+              <li><a href="#">Donate and Receive</a></li>
+              <li><a href="#">Bloodbank Details</a></li>
+              <li><a href="#">Donor Details</a></li>
+              <li><a href="#">Stock Details</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+          <li><a href="{% url 'pricing' %}">Pricing</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
+
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'home' %}" class="getstarted">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Team Details</h2>
+          <ol>
+            <li><a href="home.html">Home</a></li>
+            <li>Team</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team ">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>BARSHARANI BARIK</h4>
+                <span>Team Leader</span>
+                <p>Backend Developer</p>
+                <p>Database Designer</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>PUNYAMAYEE BEHERA</h4>
+                <span>Frontend Designer</span>
+                <p>Financial Supporter</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>SUBHRAJIT ACHARYA</h4>
+                <span>Frontend Designer</span>
+                <p>Logo Designer</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>SIBASIS ROUTRAY</h4>
+                <span>Frontend Designer</span>
+                <p>New Ideas Developer</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/team/team-5.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>SADASIBA BALIYARSINGH</h4>
+                <span>Backend Developer</span>
+                <p>Django Developer</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/team/team-6.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>DEEPTI BALA MISHRA</h4>
+                <span>Team Coodinator</span>
+                <p>Our Project Mentor</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>VITALVESSELS</h3>
+              <p>
+                GITA AUTONOMOUS COLLEGE<br>
+                MADANPUR, BHUBANESWAR, KHORDHA<br><br>
+                <strong>Phone:</strong> +91 9938 6850 49<br>
+                <strong>Email:</strong> sadasiba2001@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Doctor Appointment</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Donate and Recieve </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Bloodbank Details</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Stock Details</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Donor Details</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>If any query, You can send your mail here</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>VItal-Vessels</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">PUNYAMAYEE</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+
+</body>
+
+</html>

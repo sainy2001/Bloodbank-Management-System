@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/assets/css/login.css">
+    <title>Login</title>
+    
+</head>
+<body>
+    <!-- Page Header -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <!-- Home Logo -->
+                <a href="{% url 'index' %}"><img src="/static/assets/img/login/home.jpg" alt="Home Logo" width="40" style="background-color: transparent; color:#ffffff" ></a>
+            </div>
+        </div>
+    </div>
+    <!----------------------- Main Container -------------------------->
+
+     <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <!-- Page Header -->
+
+    <!----------------------- Login Container -------------------------->
+
+       <div class="row border border-secondary rounded-5 p-3 shadow box-area" style="background-color: rgba(255, 255, 255, 0.3);
+       background-size: cover; border-color: rgba(255, 255, 255, 0.2);">
+
+        <!-- Header -->
+        <div class="col-md-12 text-center mb-3">
+            <h2 style="color: #ffffff;"><u>Login</u> <u>Page</u></h2>
+        </div>
+        <!-- Success/ Error Message -->
+        {% if messages %}
+            {% for message in messages %}
+                {% if 'success_message' in message.tags %}
+                    <div class="email-success-message">
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if 'password_login_error' in message.tags %}
+                    <div class="email-error-message">
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if 'user_login_error' in message.tags %}
+                    <div class="email-error-message">
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+    <!--------------------------- Left Box ----------------------------->
+
+       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background-color: transparent;">
+            <div class="featured-image mb-3 text-wrap text-center shadow rounded-5 border border-primary p-4">
+                <img src="/static/assets/img/login/blood-3.png" class="img-fluid " style="width: 350px; background-color: transparent">
+                <p class="text fs-2" style="font-family: 'Roboto', Courier, monospace; font-weight: 600; color: rgb(255, 155, 163);"><u>Be</u> <u>Humble</u> ...</p>
+                <small class="text-white " style="width: 17rem;font-family: 'Poppins', Courier, monospace;">Become a Hero of Hope: Join Our Blood Bank and be the Beacon of Life in Times of Need!.</small>
+            </div>
+            
+       </div> 
+
+    <!-------------------- ------ Right Box ---------------------------->
+        
+            <div class="col-md-6 right-box">
+                <div class="row align-items-center">
+                        <div class="header-text mb-4">
+                            <h2 style="color:#ffffff">Hello, Again</h2>
+                            <p style="color:#e3dbdb">We are happy to have you back.</p>
+                        </div>
+                        <form method="post">
+                            {% csrf_token %}
+                            <label for="Email" style="color:#ffffff">Email address</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" id="Email" name="Email">
+                            </div>
+                            <label for="Password" style="color:#ffffff">Password</label>
+                            <div class="input-group mb-1">
+                                <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" id="Password" name="Password">
+                                <span class="input-group-text" style="background-color: white;" id="password-toggle">
+                                    <i class="toggle-password fa fa-eye" style="background-color: white;" onclick="togglePasswordVisibility()"></i>
+                                </span>
+                            </div>
+                            <div class="input-group mb-5 d-flex justify-content-between">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="formCheck">
+                                    <label for="formCheck" class="form-check-label text-secondary"><small style="color:#ffffff">Remember Me</small></label>
+                                </div>
+                                <div class="forgot">
+                                    <small><a href="#" style="color: #ffffff;">Forgot Password?</a></small>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-lg btn-primary w-100 fs-6 rounded-3" type="submit">Login</button>
+                            </div>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-lg btn-light w-100 fs-6"><img src="/static/assets/img/login/google.jpg" style="width:50px" class="me-2"><small>Sign In with Google</small></button>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="row col-md-12 text-center">
+                                    <small style="color:#ffffff">Don't have an account? <a href="{% url 'register' %}" style="color: #ffffff;">Sign Up</a></small>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+         
+
+      </div>
+    </div>
+    <script>
+        // Wait for the document to load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Select all elements with the class "alert" and schedule their removal
+            var alertElements = document.querySelectorAll(".alert");
+            alertElements.forEach(function(alertElement) {
+                setTimeout(function() {
+                    alertElement.style.display = 'none';
+                }, 2500); // Hide the element after 2.5 seconds (2500 milliseconds)
+            });
+        });
+    </script>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("Password");
+            var eyeIcon = document.querySelector(".toggle-password");
+    
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            }
+        }
+    </script>
+    
+    
+
+</body>
+</html>

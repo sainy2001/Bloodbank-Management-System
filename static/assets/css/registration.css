@@ -1,0 +1,36 @@
+/* Add your custom CSS styles for the registration form here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200;1,300&display=swap');
+body {
+    background-image: url("https://wallpapercave.com/wp/F6tZegt.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Example styles for input fields */
+.form-control {
+    margin-bottom: 10px;
+}
+
+/* Example styles for the submit button */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Example styles for the "Already have an account?" link */
+.text-center a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
